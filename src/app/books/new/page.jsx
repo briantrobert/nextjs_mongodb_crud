@@ -106,7 +106,7 @@ function BookForm() {
                    peer-focus:-top-6 peer-focus:font-semibold
                    peer-focus:text-xl
                    peer-focus:text-gray-900">
-            Título
+                  Título
           </label>
         </div>
         <div className="flex flex-col mt-8 relative">
@@ -126,7 +126,7 @@ function BookForm() {
                            peer-focus:-top-6 peer-focus:font-semibold
                            peer-focus:text-xl
                            peer-focus:text-gray-900">
-            Autor
+                   Autor
                  </label>
         </div>
         <div className="flex flex-col mt-8 relative">
@@ -147,7 +147,7 @@ function BookForm() {
                  peer-focus:-top-6 peer-focus:font-semibold
                  peer-focus:text-xl
                  peer-focus:text-gray-900">
-            Publicado
+                 Publicado
             </label>
         </div>
         <div className="flex flex-col mt-8 relative">
@@ -168,7 +168,7 @@ function BookForm() {
                  peer-focus:-top-6 peer-focus:font-semibold
                  peer-focus:text-xl
                  peer-focus:text-gray-900">
-            Reseña
+                 Reseña
             </label>
         </div>
         <div className="pt-3 flex justify-end items-center space-x-2">
