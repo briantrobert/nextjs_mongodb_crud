@@ -1,3 +1,3 @@
 {
-  "extends": "next/bebel"
+  "extends": "next/babel"
 }
