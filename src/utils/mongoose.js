@@ -7,12 +7,12 @@ const conn = {
   }
 
 export async function connectDB() {
-  let uri = process.env.DATABASE_URL;
+  let uri = process.env.MONGODB_URI;
   let options = {};
  //TODO debo usar dos direcciones una par ael trabajo con la db local y otra cuando este online
 //usar mongodb en la nube
 
-if(!process.env.DATABASE_URL){
+if(!process.env.MONGODB_URI){
   throw new Error("Añade tu direccion de Mongo al env.local");
 }
 
