@@ -19,7 +19,7 @@ if(!process.env.MONGODB_URI){
 //  JavaScript   
   if(conn.isConnected) return;
 
-  const db = await connect(uri, options)
+  const db = await connect(process.env.MONGODB_URI)
   conn.isConnected = db.connections[0].readyState
 
 //typescript
