@@ -4,12 +4,12 @@ import { Variants1 } from "@/helper/Variants"
 
 function HeaderText() {
   return (
-    <div className="pt-6 pl-10 flex w-full">
+    <div className="pb-5 md:pb-0 pt-6 pl-10 flex w-full">
        <motion.div 
         variants={Variants1}
         initial="hidden"
         animate="visible">
-        <h1 className="text-white text-3xl font-semibold">Añade tu libro favorito</h1>
+        <h1 className="text-gray-700 text-3xl font-semibold">Añade tus libros favoritos</h1>
       </motion.div>
     </div>
   )

@@ -1,11 +1,10 @@
-
 'use client'
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useRouter, useParams } from "next/navigation"
 import Link from "next/link"
-import { CancelSvg, CheckSvg } from "@/components/svg/AllSvg"
 import { motion } from "framer-motion"
+import { AiFillCheckCircle } from "react-icons/ai";
 
 const initValues = {
   title: "",
@@ -27,7 +26,7 @@ function BookForm() {
     try {
       const { data } = await axios.post('/api/tasks', formData)
       if (data.message == "Creado exitosamente") {
-        router.push('/')
+        router.push('/book_list')
         router.refresh() // antes se utilizaba router.refresh() para actualizar la pagina a la cual nos dirigiamos en esta version ya no hace falta
         return message
       }
@@ -42,7 +41,7 @@ function BookForm() {
     try {
       const { data } = await axios.put(`/api/tasks/${id}`, formData)
       if (data.message == "Actualizado exitosamente") {
-        router.push('/')
+        router.push('/book_list')
         router.refresh() // antes se utilizaba router.refresh() para actualizar la pagina a la cual nos dirigiamos en esta version ya no hace falta
         return message
       }
@@ -172,16 +171,15 @@ function BookForm() {
             </label>
         </div>
         <div className="pt-3 flex justify-end items-center space-x-2">
-          <button className="flex space-x-1 bg-cyan-600 focus:outline-none hover:bg-cyan-800 hover:scale-105 text-gray-800 hover:text-gray-100 transition-all ease-in-out font-semibold rounded-xl px-3 py-2">
-            <CheckSvg />
+          <button className="flex items-center justify-center space-x-1 bg-gray-400 focus:outline-none hover:bg-gray-500 hover:scale-105 text-gray-800 hover:text-gray-100 transition-all ease-in-out font-semibold rounded-xl px-3 py-2">
+            <AiFillCheckCircle />
             <span>
               {
                 !params.id ? "Guardar" : "Editar"}
             </span>
           </button>
-          <Link href="/" className="focus:outline-none">
-            <button className="flex space-x-1 bg-gray-500 focus:outline-none hover:bg-gray-700 hover:scale-105 text-gray-800 hover:text-gray-100 transition-all ease-in-out font-semibold rounded-xl px-3 py-2">
-              <CancelSvg />
+          <Link href="/book_list" className="focus:outline-none">
+            <button className="flex space-x-1 bg-gray-300 focus:outline-none hover:bg-gray-500 hover:scale-105 text-gray-800 hover:text-gray-100 transition-all ease-in-out font-semibold rounded-xl px-3 py-2">
               <span>Cancelar</span>
             </button>
           </Link>

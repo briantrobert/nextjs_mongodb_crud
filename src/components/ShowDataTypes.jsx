@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation"
 import { Variants2 } from "@/helper/Variants"
 import axios from "axios"
 import { AppContext } from "@/context/StateProviders"
+import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 
 function ShowDataTypes({ data }) {
 
@@ -41,8 +42,8 @@ function ShowDataTypes({ data }) {
             <div className="w-full flex justify-end items-center">
                 {/* <button className="py-2 px-1 border rounded-xl" onClick={() => setShowWays(!showWays)}>Cambiar vista</button> */}
                 <div className="flex justify-center items-center mr-7">
-                    <button className={`px-2 py-1 rounded-s-xl ${showWays ? `bg-gray-300 border border-gray-300` : `bg-gray-700`}`} disabled={!showWays} onClick={() => handleChangeView()}><CardViewSvg /></button>
-                    <button className={`px-2 py-1 rounded-e-xl ${!showWays ? `bg-gray-300 border border-gray-300` : `bg-gray-700`} `} disabled={showWays} onClick={() => handleChangeView()}><TableViewSvg /></button>
+                    <button className={`px-2 py-1 rounded-s-xl ${showWays ? `bg-gray-300 border border-gray-500` : `bg-gray-700`}`} disabled={!showWays} onClick={() => handleChangeView()}><CardViewSvg /></button>
+                    <button className={`px-2 py-1 rounded-e-xl ${!showWays ? `bg-gray-300 border border-gray-500` : `bg-gray-700`} `} disabled={showWays} onClick={() => handleChangeView()}><TableViewSvg /></button>
                 </div>
             </div>
             <AnimatePresence>
@@ -53,10 +54,10 @@ function ShowDataTypes({ data }) {
                         animate={{y: 0, opacity:1}}
                         transition={{duration: 0.5}}
                         exit={{ opacity: 0 }}>
-                        <div className="overflow-auto rounded-lg shadow-md shadow-gray-400">
+                        <div className="overflow-auto rounded-lg shadow-lg shadow-gray-900">
                             <table className="w-full">
                                 <thead className="bg-gray-50 border-b-2 border-gray-200">
-                                    <tr className="p-3 bg-gray-700">
+                                    <tr className="p-3 bg-gray-600 text-gray-300">
                                         <th className="p-3 font-bold tracking-wide text-left">Título</th>
                                         <th className="p-3 font-bold tracking-wide text-left">Autor</th>
                                         <th className="w-24 p-3 font-bold tracking-wide text-left">Publicado</th>
@@ -74,9 +75,9 @@ function ShowDataTypes({ data }) {
                                                 <td className="border rounded-xl whitespace-nowrap">
                                                     <div className="flex justify-end items-end space-x-2">
                                                         <Link href={`/books/${m._id}`}>
-                                                            <button className="p-1"><EditIcon /></button>
+                                                            <button className="p-1"><AiFillEdit /></button>
                                                         </Link>
-                                                        <button className="p-1" onClick={() => handleDelete(m._id)}><TrashIcon /></button>
+                                                        <button className="p-1" onClick={() => handleDelete(m._id)}><AiFillDelete /></button>
                                                     </div>
                                                 </td>
                                             </tr>

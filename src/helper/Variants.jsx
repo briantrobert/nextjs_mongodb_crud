@@ -26,3 +26,17 @@ export const Variants2 = {
     }
 }
 
+export const fadeInAnimationVariantsSide = {
+    initial: {
+     opacity: 0,
+     x: 20,
+    },
+    animate: (index) => ({
+     opacity: 1,
+     x: 0,
+     transition: {
+       delay: 0.1 * index,
+     }
+    }),
+  }
+

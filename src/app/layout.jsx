@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='antialiased h-screen bg-gradient-to-br from-[#112D60] to-[#B6B0B5]'>
+      <body className='antialiased h-screen bg-gray-300'>
         <Navbar />
         <StateProviders>
           {children}
