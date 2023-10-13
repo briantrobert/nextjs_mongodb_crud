@@ -1,4 +1,4 @@
-import LandingPage from "@/components/LandingPage"
+import LandingPage from "../components/LandingPage"
 
 export default async function Home() {
 
